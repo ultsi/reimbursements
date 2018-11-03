@@ -1,6 +1,6 @@
 import * as React from 'react';
+import Form from './components/Form';
 import './NewReimbursement.css';
-import NewReimbursementForm from './NewReimbursementForm';
 
 
 export default class NewReimbursement extends React.Component {
@@ -9,7 +9,7 @@ export default class NewReimbursement extends React.Component {
     return (
       <div>
         <p>Luo tässä uusi kulukorvaus.</p>
-        <NewReimbursementForm onSubmit={this.submit} />
+        <Form onSubmit={this.submit} />
       </div>
     )
   }

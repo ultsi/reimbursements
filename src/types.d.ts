@@ -1,9 +1,9 @@
 
-export interface IReimbursementItems {
-  id: number,
+export interface IReimbursementItem {
+  id?: number,
   name: string,
-  reason: string,
-  price: number
+  price: number,
+  reason: string
 }
 
 export interface IReimbursement {
@@ -12,7 +12,7 @@ export interface IReimbursement {
   status: string, // 'PENDING', 'APPROVED', 'DENIED'
   imbursee: string,
   iban: string,
-  items: IReimbursementItems
+  items: IReimbursementItem[]
 }
 
 export interface IAction {
