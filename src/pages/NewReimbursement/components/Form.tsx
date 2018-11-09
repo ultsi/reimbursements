@@ -18,7 +18,8 @@ class NewReimbursementForm extends React.Component<InjectedFormProps, INewReimbu
   }
 
   public render() {
-    const { handleSubmit, pristine } = this.props
+    const { handleSubmit, pristine, invalid } = this.props
+    console.log(this.props)
     const { page } = this.state
     return (
       <form onSubmit={handleSubmit}>
@@ -27,7 +28,7 @@ class NewReimbursementForm extends React.Component<InjectedFormProps, INewReimbu
           <>
             <PersonalInfo />
             <div>
-              <button type="button" disabled={pristine} onClick={this.next('items')}>
+              <button type="button" disabled={pristine || invalid} onClick={this.next('items')}>
                 Seuraava
               </button>
             </div>
@@ -36,7 +37,7 @@ class NewReimbursementForm extends React.Component<InjectedFormProps, INewReimbu
           <>
             <FieldArray name="items" component={FormReimbursementItems} />
             <div>
-              <button type="button" disabled={pristine} onClick={this.next('check')}>
+              <button type="button" disabled={pristine || invalid} onClick={this.next('check')}>
                 Valmis
               </button>
             </div>

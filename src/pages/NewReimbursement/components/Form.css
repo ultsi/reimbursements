@@ -71,6 +71,12 @@ form button:hover {
 	background-color:#24b648;
 }
 
+form button:disabled {
+	background-color: #999999;
+	border-color: #999999;
+	box-shadow: none;
+}
+
 form input[type="file"] {
   display: none;
 }
@@ -100,4 +106,12 @@ form label .file-input {
 .file-input img {
   width: 100%;
   text-align: center;
+}
+
+input[class="error"]::placeholder {
+	color: red;
+}
+
+input[class="warning"]::placeholder {
+	color: orange;
 }
